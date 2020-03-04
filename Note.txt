@@ -1,0 +1,10 @@
+1. What's API meaning ? https://www.webopedia.com/TERM/A/API.html
+
+2. Tool check Json format: https://jsonformatter.curiousconcept.com/
+
+3.Check status code of the http respond : https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
+
+Reference documents :
+	1.https://www.guru99.com/postman-tutorial.html
+	2.https://www.toolsqa.com/postman/api-testing-with-postman/
+	
