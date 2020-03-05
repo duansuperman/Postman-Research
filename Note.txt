@@ -4,6 +4,70 @@
 
 3.Check status code of the http respond : https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
 
+4.Test Postman's request with Javascript method
+	tests["Check element image in json respond"] = responseBody.has("346");
+	
+tests["Check status code"] = responseCode.code === 200;
+	
+tests["Check the returning Time"] = responseTime < 6500 && responseTime > 6500;
+
+5.Test Postman's Request with Functional method
+	
+	5.1 Check status code recieved :
+		pm.test("Status code to be 200",function(){
+
+			pm.response.to.have.status(200);
+
+		});
+		
+		//or
+
+		pm.test("Status code to be 200 OK",function(){
+    
+			pm.expect(pm.response.code).to.equal(200);
+	
+	});
+	5.2 Check fields in Json string recieved :
+		pm.test("Check fields of data recieved", function () {
+  
+			var jsonData = pm.response.json();
+    
+			pm.expect(jsonData["data"][0]).to.have.property("id");
+    
+			pm.expect(jsonData["data"][0]).to.have.property("image");
+    
+			pm.expect(jsonData["data"][0]).to.have.property("email");
+    
+			pm.expect(jsonData["data"][0]).to.have.property("employeeCode");
+    
+			pm.expect(jsonData["data"][0]).to.have.property("employeeName");
+    
+			pm.expect(jsonData["data"][0]).to.have.property("furigana");
+    
+
+		});
+
+	5.3 Check fields of the data in json content recieved :
+		pm.test("The Data in Json content contains the fields ", function () {
+    
+			var jsonData = pm.response.json();
+    pm.expect(jsonData["data"][0]).to.have.property("id");
+    
+			pm.expect(jsonData["data"][0]).to.have.property("image");
+    
+			pm.expect(jsonData["data"][0]).to.have.property("email");
+    
+			pm.expect(jsonData["data"][0]).to.have.property("employeeCode");
+    
+			pm.expect(jsonData["data"][0]).to.have.property("employeeName");
+    
+			pm.expect(jsonData["data"][0]).to.have.property("furigana");
+    
+		
+});
+	5.4 
+		
+
 Reference documents :
 	1.https://www.guru99.com/postman-tutorial.html
 	2.https://www.toolsqa.com/postman/api-testing-with-postman/
